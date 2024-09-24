@@ -29,7 +29,8 @@ function removeProduct(productId) {
   if (index === -1) {
     throw new Error('Product not found');
   }
-  products.splice(index, 1); // eliminamos solo 1 producto desde el indice dado
+  products = products.filter(product => product.id !== productId)
+  return products
 }
 
 function getProducts() {
